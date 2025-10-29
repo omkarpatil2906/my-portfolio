@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Briefcase, FileText, Home, Mail, Menu, Server, User, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 function Navbar() {
     const [open, setOpen] = useState(false);
+   
+    
 
     const navItems = [
         { id: 'hero', icon: Home, label: 'Home' },

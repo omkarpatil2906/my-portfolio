@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Facebook, Instagram, Linkedin, Twitter, } from 'lucide-react';
-import hero from '../assets/img/omkar-hero-page.jpeg'
+import hero from '../assets/img/hero-img.jpeg'
 
 function Hero() {
     return (
