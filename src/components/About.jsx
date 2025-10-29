@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Award, BookOpen, ChevronRight, Headphones, Smile } from 'lucide-react'
+import aboutImg from '../assets/img/OmkarP.webp'
 
 function About() {
     return (
@@ -31,7 +32,10 @@ function About() {
                         </motion.h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div className="flex items-center justify-center gap-8 max-w-6xl mx-auto">
+                        <motion.div>
+                            <img src={aboutImg} className='h-96' alt="" />
+                        </motion.div>
                         <motion.div
                             initial={{ opacity: 0, x: -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -62,34 +66,7 @@ function About() {
                             </div>
                         </motion.div>
 
-                        <motion.div
-                            initial={{ opacity: 0, x: 100 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.3 }}
-                            className="grid grid-cols-2 gap-8"
-                        >
-                            {[
-                                { icon: Smile, count: 232, label: 'Happy Clients' },
-                                { icon: BookOpen, count: 521, label: 'Projects' },
-                                { icon: Headphones, count: 1463, label: 'Hours Of Support' },
-                                { icon: Award, count: 25, label: 'Awards' }
-                            ].map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.5, y: 50 }}
-                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.8, delay: 0.6 + i * 0.15 }}
-                                    whileHover={{ scale: 1.1, y: -10 }}
-                                    className="bg-white p-6 rounded-lg shadow-lg text-center"
-                                >
-                                    <item.icon className="mx-auto mb-2 text-blue-600" size={32} />
-                                    <div className="text-3xl font-bold text-gray-800">{item.count}</div>
-                                    <div className="text-sm text-gray-600">{item.label}</div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
+
                     </div>
                 </motion.div>
             </section>

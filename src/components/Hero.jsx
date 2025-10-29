@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Facebook, Instagram, Linkedin, Twitter, } from 'lucide-react';
-import hero from '../assets/img/hero-img.jpeg'
+import hero from '../assets/img/PhotoRoom.png'
 
 function Hero() {
     return (
@@ -11,7 +11,7 @@ function Hero() {
                 className="min-h-screen flex items-center pl-40 relative overflow-hidden"
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center opacity-40"
+                    className="absolute inset-0 bg-cover bg-center opacity-80"
                     style={{ backgroundImage: `url(${hero})` }}
                 ></div>
                 <motion.div
