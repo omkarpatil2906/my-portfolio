@@ -33,7 +33,7 @@ function Navbar() {
             <motion.nav
                 initial={{ x: -300 }}
                 animate={{ x: open || window.innerWidth >= 1024 ? 0 : -300 }}
-                className="fixed top-0 left-0 h-full bg-white  border-gray-200 z-40 p-4  shadow-lg lg:shadow-none"
+                className="fixed top-0 left-0 h-full  z-40 p-4  shadow-lg lg:shadow-none"
 
             >
                 <div className="flex flex-col  justify-center h-full gap-2">
