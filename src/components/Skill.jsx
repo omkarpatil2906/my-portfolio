@@ -6,16 +6,16 @@ const skills = [
   { name: "CSS3", level: 95 },
   { name: "JavaScript", level: 85 },
   { name: "Tailwind CSS", level: 90 },
-  { name: "Material UI (MUI)", level: 85 },
-  { name: "React Hook Form", level: 80 },
   { name: "React.js", level: 90 },
+  { name: "React Hook Form", level: 80 },
+  { name: "Material UI (MUI)", level: 85 },
   { name: "Node.js", level: 70 },
   { name: "SQL", level: 75 },
 ];
 
 const Skill = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-[#0d1117] px-4 md:px-20">
+    <section id="skills" className="">
       {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -29,11 +29,11 @@ const Skill = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative inline-block text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b] dark:text-white"
+          className="relative inline-block text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b] "
         >
           Skills
           {/* Gray line */}
-          <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
+          <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px " />
           {/* Blue line animation */}
           <motion.span
             initial={{ width: 0 }}
@@ -43,7 +43,7 @@ const Skill = () => {
             className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#0563bb]"
           />
         </motion.h2>
-        <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p className="text-gray-600  max-w-3xl mx-auto">
           As a Frontend Developer passionate about crafting seamless, responsive, and
           modern user interfaces, I’ve honed my expertise across a range of technologies.
         </p>
@@ -59,14 +59,14 @@ const Skill = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
           >
-            <div className="mb-6">
+            <div >
               <div className="flex justify-between mb-2">
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                <span className="text-sm font-medium text-gray-800 ">
                   {skill.name}
                 </span>
                 <span className="text-sm font-medium text-[#0563bb]">{skill.level}%</span>
               </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+              <div className="w-full bg-gray-200  rounded-full h-3 overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
