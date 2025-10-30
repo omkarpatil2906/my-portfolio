@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Facebook, Instagram, Linkedin, Twitter, } from 'lucide-react';
+import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+
 import hero from '../assets/img/PhotoRoom.png'
 
 function Hero() {
@@ -24,7 +25,7 @@ function Hero() {
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="text-5xl md:text-7xl font-bold text-gray-800 mb-4"
+                        className="text-5xl md:text-7xl font-bold text-[#45505b] mb-4"
                     >
                         Omkar Patil
                     </motion.h1>
@@ -32,17 +33,16 @@ function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.6 }}
-                        className="text-xl md:text-2xl text-gray-600 mb-8"
+                        className="text-xl md:text-2xl text-[#45505b] mb-8"
                     >
-                        I'm a <span className="text-blue-600 font-semibold">Frontend Developer</span>
+                        I'm a <span className="text-[#0563bb] font-semibold">Frontend Developer</span>
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.9 }}
-                        className="flex gap-4 justify-center"
                     >
-                        {[Twitter, Facebook, Instagram, Linkedin].map((Icon, i) => (
+                        {[FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
                             <motion.a
                                 key={i}
                                 initial={{ scale: 0 }}
@@ -50,9 +50,9 @@ function Hero() {
                                 transition={{ duration: 0.5, delay: 1.2 + i * 0.1 }}
                                 whileHover={{ scale: 1.3, y: -8, rotate: 5 }}
                                 href="#"
-                                className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                                className="text-[#45505b] hover:text-[#0563bb] leading-0.5 transition-colors mr-6 inline-block duration-300"
                             >
-                                <Icon size={24} />
+                                <Icon size={16} />
                             </motion.a>
                         ))}
                     </motion.div>
