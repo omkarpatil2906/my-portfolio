@@ -15,7 +15,7 @@ const skills = [
 
 const Skill = () => {
   return (
-    <section id="skills" className="">
+    <section id="skills" className="py-12">
       {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -33,7 +33,7 @@ const Skill = () => {
         >
           Skills
           {/* Gray line */}
-          <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px " />
+          <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
           {/* Blue line animation */}
           <motion.span
             initial={{ width: 0 }}
