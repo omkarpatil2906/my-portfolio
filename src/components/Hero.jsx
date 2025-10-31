@@ -3,18 +3,28 @@ import { motion } from 'framer-motion'
 import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 import hero from '../assets/img/PhotoRoom.png'
+import heroMobile from '../assets/img/PhotoRoomMobile.png'
+
 
 function Hero() {
     return (
         <div>
             <section
                 id="hero"
-                className="min-h-screen flex items-center pl-40 relative overflow-hidden"
+                className="min-h-screen w-full flex items-center relative overflow-hidden"
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center opacity-80"
+                    className="hidden md:flex absolute inset-0 bg-cover bg-center opacity-40"
                     style={{ backgroundImage: `url(${hero})` }}
                 ></div>
+
+                <div className="md:hidden absolute h-full inset-0 flex items-center justify-center">
+                    <img
+                        src={heroMobile}
+                        alt="Omkar Patil"
+                        className="h-screen w-auto object-cover   opacity-20"
+                    />
+                </div>
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
