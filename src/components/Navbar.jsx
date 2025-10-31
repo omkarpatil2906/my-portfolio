@@ -1,12 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Briefcase, FileText, Home, Mail, Menu, Server, User, X } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
 
 function Navbar() {
     const [open, setOpen] = useState(false);
-   
-    
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+    // Handle window resize
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth < 1024;
+            setIsMobile(mobile);
+            
+            // Close mobile menu when switching to desktop
+            if (!mobile) {
+                setOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        
+        // Check on mount
+        handleResize();
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Close menu on mobile when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isMobile && open && !event.target.closest('nav') && !event.target.closest('button')) {
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [open, isMobile]);
 
     const navItems = [
         { id: 'hero', icon: Home, label: 'Home' },
@@ -15,51 +45,73 @@ function Navbar() {
         { id: 'portfolio', icon: Briefcase, label: 'Portfolio' },
         { id: 'services', icon: Server, label: 'Services' },
         { id: 'contact', icon: Mail, label: 'Contact' }
-    ]
+    ];
 
-    const handleNavClick = (id) => {
-
-    }
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Close mobile menu after clicking
+        if (isMobile) {
+            setOpen(false);
+        }
+    };
 
     return (
         <>
+            {/* Mobile Menu Toggle Button */}
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                // transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 onClick={() => setOpen(!open)}
-                className='lg:hidden fixed right-4 z-50 bg-blue-500 text-white p-2 rounded-full'
+                className='lg:hidden fixed top-4 right-4 z-50 bg-blue-600 text-white p-2 rounded-full shadow-lg'
             >
                 {open ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
 
-            <motion.nav
-                initial={{ x: -300 }}
-                animate={{ x: open || window.innerWidth >= 1024 ? 0 : -300 }}
-                className="fixed top-0 left-0 h-full  z-40 p-4  shadow-lg lg:shadow-none"
+            {/* Overlay for mobile */}
+            {isMobile && open && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setOpen(false)}
+                    className="fixed inset-0 bg-white bg-opacity-50 z-30 lg:hidden"
+                />
+            )}
 
+            {/* Navigation */}
+            <motion.nav
+                initial={false}
+                animate={{
+                    x: isMobile ? (open ? 0 : -300) : 0
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-40 p-4 lg:w-24 w-72 shadow-lg lg:shadow-none"
             >
-                <div className="flex flex-col  justify-center h-full gap-2">
-                    {navItems.map((item) => (
+                <div className="flex flex-col justify-center h-full gap-2">
+                    {navItems.map((item, index) => (
                         <motion.button
                             key={item.id}
-                            whileHover={{ scale: 1.05, width: '100%' }}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => scrollToSection(item.id)}
-                            className={`flex justify-center items-center gap-3 p-5 rounded-full transition-all ${item.id
-                                ? 'bg-[#0563BB] text-white'
-                                : 'bg-gray-100 text-gray-600 hover:bg-[#0563BB] hover:text-white'
-                                }`}
+                            className="flex items-center lg:justify-center gap-3 p-3 rounded-full transition-all bg-gray-100 text-gray-600 hover:bg-[#0563BB] hover:text-white"
                         >
-                            <item.icon size={15} />
-                            {/* <span className="lg:hidden">{item.label}</span> */}
+                            <item.icon size={20} />
+                            <span className="lg:hidden">{item.label}</span>
                         </motion.button>
                     ))}
                 </div>
             </motion.nav>
-
         </>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
