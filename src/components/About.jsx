@@ -23,10 +23,8 @@ function About() {
                         >
                             About
 
-                            {/* Gray underline (static) */}
                             <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
 
-                            {/* Blue underline (animated) */}
                             <motion.span
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "40px" }}

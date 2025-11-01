@@ -61,7 +61,7 @@ function Navbar() {
 
     return (
         <>
-            {/* Mobile Menu Toggle Button */}
+         
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -72,7 +72,7 @@ function Navbar() {
                 {open ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
 
-            {/* Overlay for mobile */}
+          
             {isMobile && open && (
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -83,7 +83,7 @@ function Navbar() {
                 />
             )}
 
-            {/* Navigation */}
+          
             <motion.nav
                 initial={false}
                 animate={{
