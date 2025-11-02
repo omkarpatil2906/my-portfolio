@@ -6,13 +6,11 @@ function Navbar() {
     const [open, setOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
-    // Handle window resize
     useEffect(() => {
         const handleResize = () => {
             const mobile = window.innerWidth < 1024;
             setIsMobile(mobile);
             
-            // Close mobile menu when switching to desktop
             if (!mobile) {
                 setOpen(false);
             }
@@ -20,13 +18,11 @@ function Navbar() {
 
         window.addEventListener('resize', handleResize);
         
-        // Check on mount
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Close menu on mobile when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (isMobile && open && !event.target.closest('nav') && !event.target.closest('button')) {
@@ -53,7 +49,6 @@ function Navbar() {
             element.scrollIntoView({ behavior: 'smooth' });
         }
         
-        // Close mobile menu after clicking
         if (isMobile) {
             setOpen(false);
         }
