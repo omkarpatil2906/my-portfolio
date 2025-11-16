@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Briefcase, FileText, Home, Mail, Menu, Server, User, X } from 'lucide-react';
 
 function Navbar() {
@@ -10,14 +10,14 @@ function Navbar() {
         const handleResize = () => {
             const mobile = window.innerWidth < 1024;
             setIsMobile(mobile);
-            
+
             if (!mobile) {
                 setOpen(false);
             }
         };
 
         window.addEventListener('resize', handleResize);
-        
+
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
@@ -48,7 +48,7 @@ function Navbar() {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
-        
+
         if (isMobile) {
             setOpen(false);
         }
@@ -56,51 +56,61 @@ function Navbar() {
 
     return (
         <>
-         
+
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 onClick={() => setOpen(!open)}
-                className='lg:hidden fixed top-4 right-4 z-50 bg-blue-600 text-white p-2 rounded-full shadow-lg'
+                className='lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-[#0563BB] to-[#0452a0] text-white p-3 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all'
             >
-                {open ? <X size={24} /> : <Menu size={24} />}
+                <motion.div
+                    animate={{ rotate: open ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {open ? <X size={24} /> : <Menu size={24} />}
+                </motion.div>
             </motion.button>
 
-          
-            {isMobile && open && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setOpen(false)}
-                    className="fixed inset-0 bg-white bg-opacity-50 z-30 lg:hidden"
-                />
-            )}
+            <AnimatePresence>
+                {isMobile && open && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setOpen(false)}
+                        className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden backdrop-blur-sm"
+                    />
+                )}
+            </AnimatePresence>
 
-          
             <motion.nav
                 initial={false}
                 animate={{
                     x: isMobile ? (open ? 0 : -300) : 0
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-40 p-4 lg:w-24 w-72 shadow-lg lg:shadow-none"
+                className="fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-40 p-4 lg:w-24 w-72 shadow-2xl lg:shadow-none overflow-y-auto"
             >
-                <div className="flex flex-col justify-center h-full gap-2">
+                <div className="flex flex-col justify-center h-full gap-3">
                     {navItems.map((item, index) => (
                         <motion.button
                             key={item.id}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, x: 5 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => scrollToSection(item.id)}
-                            className="flex items-center lg:justify-center gap-3 p-3 rounded-full transition-all bg-gray-100 text-gray-600 hover:bg-[#0563BB] hover:text-white"
+                            className="flex items-center lg:justify-center gap-3 p-3 rounded-2xl transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-[#0563BB] hover:text-white hover:shadow-lg group"
                         >
-                            <item.icon size={20} />
-                            <span className="lg:hidden">{item.label}</span>
+                            <motion.div
+                                whileHover={{ rotate: 360 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <item.icon size={20} />
+                            </motion.div>
+                            <span className="lg:hidden font-medium">{item.label}</span>
                         </motion.button>
                     ))}
                 </div>
