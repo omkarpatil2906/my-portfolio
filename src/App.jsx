@@ -11,9 +11,9 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      <About />
+      {/* <About />
       <Skill />
-      <Resume/>
+      <Resume/> */}
 
     </div>
   )

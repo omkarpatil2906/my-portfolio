@@ -10,26 +10,21 @@ function Navbar() {
         const handleResize = () => {
             const mobile = window.innerWidth < 1024;
             setIsMobile(mobile);
-
             if (!mobile) {
                 setOpen(false);
             }
         };
-
         window.addEventListener('resize', handleResize);
-
         handleResize();
-
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
+   useEffect(() => {
         const handleClickOutside = (event) => {
             if (isMobile && open && !event.target.closest('nav') && !event.target.closest('button')) {
                 setOpen(false);
             }
         };
-
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [open, isMobile]);
@@ -48,11 +43,11 @@ function Navbar() {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
-
         if (isMobile) {
             setOpen(false);
         }
     };
+
 
     return (
         <>
