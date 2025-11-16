@@ -62,7 +62,7 @@ function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 onClick={() => setOpen(!open)}
-                className='lg:hidden fixed top-4 right-4 z-50 bg-gradient-to-r from-[#0563BB] to-[#0452a0] text-white p-3 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all'
+                className='lg:hidden fixed top-4 right-4 z-50 bg-linear-to-r from-[#0563BB] to-[#0452a0] text-white p-3 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all'
             >
                 <motion.div
                     animate={{ rotate: open ? 180 : 0 }}
