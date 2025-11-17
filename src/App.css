@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes cursorBlink {
+    0% { border-color: transparent; }
+    50% { border-color: #0563bb; }
+    100% { border-color: transparent; }
+}
+
+.animate-cursor {
+    animation: cursorBlink 0.8s infinite;
+}
