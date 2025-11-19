@@ -1,18 +1,28 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Award, BookOpen, ChevronRight, Headphones, Smile } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import aboutImg from '../assets/img/OmkarP.webp'
 
 function About() {
+
+    const isMobile = window.innerWidth < 768; // ✅ Detect mobile screen
+
     return (
-         <div>
-            <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-20">
+        <div>
+            <section
+                id="about"
+                className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-20"
+            >
+
+                {/* MAIN WRAPPER ANIMATION */}
                 <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: isMobile ? 0 : 100 }}   // ✅ No slide on mobile
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1.2 }}
                 >
+
+                    {/* TITLE */}
                     <div className="text-center mb-12">
                         <motion.h2
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -22,7 +32,11 @@ function About() {
                             className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
                         >
                             About
+
+                            {/* Grey line */}
                             <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
+
+                            {/* Blue line */}
                             <motion.span
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "40px" }}
@@ -32,51 +46,59 @@ function About() {
                             />
                         </motion.h2>
 
-                        <motion.p 
+                        {/* INTRO PARAGRAPH */}
+                        <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="mx-auto max-w-6xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
                         >
-                            Hello! I'm <span className="font-semibold text-[#0563bb]">Omkar Patil</span>, a passionate Frontend Developer from Belgaum, Karnataka.
-                            I specialize in crafting beautiful, responsive, and high-performing web applications using
-                            <span className="font-medium"> React.js, Tailwind CSS, and modern JavaScript frameworks.</span>
-                            My goal is to create seamless digital experiences that are not only functional but also visually engaging.
+                            Hello! I'm <span className="font-semibold text-[#0563bb]">Omkar Patil</span>, a passionate Frontend Developer from
+                            Belgaum, Karnataka. I specialize in creating beautiful, responsive, and high-performing
+                            web applications using <span className="font-medium">React.js, Tailwind CSS, and modern JavaScript.</span>
                         </motion.p>
                     </div>
 
+                    {/* ABOUT CONTENT */}
                     <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-x-6 max-w-6xl mx-auto">
+
+                        {/* LEFT IMAGE */}
                         <motion.div
-                            initial={{ opacity: 0, x: -100 }}
+                            initial={{ opacity: 0, x: isMobile ? 0 : -100 }}   // ✅ Fix for mobile
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.3 }}
                             className='w-full lg:w-[40%]'
                         >
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                className="rounded-2xl overflow-hidden shadow-xl"
-                            >
-                                <img src={aboutImg} className='h-64 sm:h-80 lg:h-96 w-full object-cover' alt="Omkar Patil" />
+                            <motion.div whileHover={{ scale: 1.02 }} className="rounded-2xl overflow-hidden shadow-xl">
+                                <img
+                                    src={aboutImg}
+                                    className='h-64 sm:h-80 lg:h-96 w-full object-cover'
+                                    alt="Omkar Patil"
+                                />
                             </motion.div>
                         </motion.div>
+
+                        {/* RIGHT CONTENT */}
                         <motion.div
-                            initial={{ opacity: 0, x: 100 }}
+                            initial={{ opacity: 0, x: isMobile ? 0 : 100 }}  // ✅ Fix for mobile
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.3 }}
                             className="space-y-4 sm:space-y-6 w-full lg:w-[60%] text-gray-700"
                         >
+
                             <h3 className="text-xl sm:text-2xl font-bold text-[#45505b]">
                                 Frontend Developer
                             </h3>
 
                             <p className="italic text-gray-600 text-sm sm:text-base">
-                                I focus on building modern, responsive UIs with clean code and smooth animations.
-                                Every project I work on reflects my dedication to detail and design precision.
+                                I build clean, modern, and responsive user interfaces with smooth animations and
+                                pixel-perfect precision.
                             </p>
 
+                            {/* INFO GRID */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                 {[
                                     { label: 'Name', value: 'Omkar Patil' },
@@ -86,7 +108,7 @@ function About() {
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, x: -30 }}
+                                        initial={{ opacity: 0, x: isMobile ? 0 : -30 }} // ✅ Fix for mobile
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
@@ -100,12 +122,12 @@ function About() {
                             </div>
 
                             <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                                I enjoy working on projects that challenge my creativity and technical skills.
-                                Whether it's creating pixel-perfect designs or implementing complex UI logic,
-                                I love bringing ideas to life on the web.
+                                I enjoy taking on challenges that push my creativity and technical limits. I love
+                                turning ideas into beautiful, functional websites.
                             </p>
                         </motion.div>
                     </div>
+
                 </motion.div>
             </section>
         </div>
