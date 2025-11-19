@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      {/* <Skill /> */}
+      <Skill />
       {/* <Resume/> */}
 
     </div>
