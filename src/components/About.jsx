@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-import aboutImg from '../assets/img/OmkarP.webp'
+import aboutImg from '../assets/img/OmkarP.png'
 
 function About() {
 
@@ -52,7 +52,7 @@ function About() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="mx-auto max-w-6xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
+                            className="mx-auto max-w-7xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
                         >
                             Hello! I'm <span className="font-semibold text-[#0563bb]">Omkar Patil</span>, a passionate Frontend Developer from
                             Belgaum, Karnataka. I specialize in creating beautiful, responsive, and high-performing
@@ -71,12 +71,15 @@ function About() {
                             transition={{ duration: 1, delay: 0.3 }}
                             className='w-full lg:w-[40%]'
                         >
-                            <motion.div whileHover={{ scale: 1.02 }} className="rounded-2xl overflow-hidden shadow-xl">
+                            <motion.div whileHover={{ scale: 1.02 }} className="rounded-2xl overflow-hidden ">
                                 <img
                                     src={aboutImg}
                                     className='h-64 sm:h-80 lg:h-96 w-full object-cover'
                                     alt="Omkar Patil"
                                 />
+
+                                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent z-20"></div>
+
                             </motion.div>
                         </motion.div>
 
