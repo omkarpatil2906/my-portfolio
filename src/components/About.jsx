@@ -52,9 +52,10 @@ function About() {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="mx-auto max-w-7xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
                         >
-                            Hello! I'm <span className="font-semibold text-[#0563bb]">Omkar Patil</span>, a passionate Frontend Developer from
+                            Hello! I'm <span className="font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">Omkar Patil</span>, a passionate Frontend Developer from
                             Belgaum, Karnataka. I specialize in creating beautiful, responsive, and high-performing
-                            web applications using <span className="font-medium">React.js, Tailwind CSS, and modern JavaScript.</span>
+                            web applications using <span className="font-medium text-[#0563bb]">React.js, Tailwind CSS, and modern JavaScript.</span> I also work with backend technologies including <span className="font-medium text-[#0563bb]">Node.js, Express.js, and SQL databases.</span>
+                   
                         </motion.p>
                     </div>
 
