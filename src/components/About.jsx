@@ -5,7 +5,7 @@ import aboutImg from '../assets/img/OmkarP.png'
 
 function About() {
 
-    const isMobile = window.innerWidth < 768; // ✅ Detect mobile screen
+    const isMobile = window.innerWidth < 768; // Detect mobile screen
 
     return (
         <div>
@@ -16,7 +16,7 @@ function About() {
 
                 {/* MAIN WRAPPER ANIMATION */}
                 <motion.div
-                    initial={{ opacity: 0, y: isMobile ? 0 : 100 }}   // ✅ No slide on mobile
+                    initial={{ opacity: 0, y: isMobile ? 0 : 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1.2 }}
@@ -33,10 +33,8 @@ function About() {
                         >
                             About
 
-                            {/* Grey line */}
                             <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
 
-                            {/* Blue line */}
                             <motion.span
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "40px" }}
@@ -63,29 +61,35 @@ function About() {
                     {/* ABOUT CONTENT */}
                     <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-x-6 max-w-6xl mx-auto">
 
-                        {/* LEFT IMAGE */}
+                        {/* LEFT IMAGE with FADE BOTTOM */}
                         <motion.div
-                            initial={{ opacity: 0, x: isMobile ? 0 : -100 }}   // ✅ Fix for mobile
+                            initial={{ opacity: 0, x: isMobile ? 0 : -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className='w-full lg:w-[40%]'
+                            className="w-full lg:w-[40%]"
                         >
-                            <motion.div whileHover={{ scale: 1.02 }} className="rounded-2xl overflow-hidden ">
+                            <motion.div 
+                                whileHover={{ scale: 1.02 }} 
+                                className="relative rounded-2xl overflow-hidden"
+                            >
                                 <img
                                     src={aboutImg}
-                                    className='h-64 sm:h-80 lg:h-96 w-full object-cover'
+                                    className="h-64 sm:h-80 lg:h-96 w-full object-cover"
                                     alt="Omkar Patil"
                                 />
 
-                                <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent z-20"></div>
-
+                                {/* WHITE FADE GRADIENT */}
+                                <div
+                                    className="absolute bottom-0 left-0 w-full h-24
+                                               bg-gradient-to-t from-white/95 via-white/70 to-transparent"
+                                ></div>
                             </motion.div>
                         </motion.div>
 
                         {/* RIGHT CONTENT */}
                         <motion.div
-                            initial={{ opacity: 0, x: isMobile ? 0 : 100 }}  // ✅ Fix for mobile
+                            initial={{ opacity: 0, x: isMobile ? 0 : 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.3 }}
@@ -111,7 +115,7 @@ function About() {
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, x: isMobile ? 0 : -30 }} // ✅ Fix for mobile
+                                        initial={{ opacity: 0, x: isMobile ? 0 : -30 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
