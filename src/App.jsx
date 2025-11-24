@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skill from './components/Skill'
 import Resume from './components/Resume'
+import Portfolio from './components/Portfolio'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       <Hero />
       <About />
       <Skill />
-      <Resume/>
+      <Resume />
+      <Portfolio />
 
     </div>
   )
