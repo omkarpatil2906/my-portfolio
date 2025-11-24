@@ -98,7 +98,6 @@ const Resume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
-                whileHover={{ x: 10 }}
                 className="relative before:content-[''] before:absolute 
                   before:w-4 before:h-4 before:rounded-full before:bg-white before:border-2 
                   before:border-[#0563bb] before:-left-[33px] before:top-0"
@@ -154,7 +153,6 @@ const Resume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 * i }}
-                whileHover={{ x: 10 }}
                 className="relative before:content-[''] before:absolute 
                   before:w-4 before:h-4 before:rounded-full before:bg-white before:border-2 
                   before:border-[#0563bb] before:-left-[33px] before:top-0"

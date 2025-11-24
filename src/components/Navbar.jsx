@@ -73,7 +73,7 @@ function Navbar() {
                         exit={isMobile ? { x: "-100%" } : {}}
                         transition={{ type: "spring", stiffness: 130, damping: 22 }}
                         className="fixed top-0 left-0 h-screen bg-transparent z-50 
-                       w-64 lg:w-24 flex flex-col justify-center gap-4 p-4"
+                        w-64 lg:w-24 flex flex-col justify-center gap-4 p-4"
                     >
                         {navItems.map((item) => (
                             <div
@@ -87,7 +87,7 @@ function Navbar() {
                                 {!isMobile && (
                                     <div className="relative flex items-center">
 
-                                        {/* BLUE LABEL — AUTO FIT WIDTH */}
+                                        {/* BLUE LABEL */}
                                         <AnimatePresence>
                                             {hovered === item.id && (
                                                 <motion.div
@@ -95,12 +95,12 @@ function Navbar() {
                                                     animate={{ scaleX: 1, opacity: 1 }}
                                                     exit={{ scaleX: 0, opacity: 0 }}
                                                     transition={{ duration: 0.25, ease: "easeOut" }}
-                                                    className="absolute left-0 origin-left h-16 bg-[#0563BB] rounded-full
-                                     flex items-center overflow-hidden shadow-lg"
+                                                    className="absolute left-0 origin-left h-14 bg-[#0563BB] rounded-full 
+                                                    flex items-center overflow-hidden shadow-lg"
                                                     style={{
                                                         zIndex: 5,
-                                                        paddingLeft: 76,
-                                                        paddingRight: 20,
+                                                        paddingLeft: 70,
+                                                        paddingRight: 18,
                                                     }}
                                                 >
                                                     <span className="text-white font-medium whitespace-nowrap">
@@ -110,24 +110,24 @@ function Navbar() {
                                             )}
                                         </AnimatePresence>
 
-                                        {/* ICON — SAME SIZE ALWAYS + SHAKE ANIMATION */}
+                                        {/* ICON (56 PX FIXED) */}
                                         <motion.div
                                             whileHover={{
                                                 rotate: 360,
                                                 transition: { duration: 0.5 },
                                             }}
-                                            className={`flex items-center justify-center z-10 transition-all rounded-full duration-200
-                      ${hovered === item.id
+                                            className={`flex items-center justify-center z-10 transition-all duration-200 rounded-full
+                                                ${hovered === item.id
                                                     ? "bg-[#0563BB] text-white"
                                                     : "bg-gray-200 text-gray-700"
                                                 }`}
                                             style={{
-                                                width: 64,
-                                                height: 64,
-                                                // borderRadius: "50%", // SAME ALWAYS
+                                                width: hovered === item.id ? 56 : 56,
+                                                height: hovered === item.id ? 56 : 56,
+                                                borderRadius: "50%",
                                                 boxShadow:
                                                     hovered === item.id
-                                                        ? "0 6px 18px rgba(5,99,187,0.25)"
+                                                        ? "0 6px 16px rgba(5,99,187,0.25)"
                                                         : "none",
                                             }}
                                         >
@@ -139,10 +139,11 @@ function Navbar() {
                                 {/* MOBILE MODE */}
                                 {isMobile && (
                                     <div
-                                        className={`w-full h-14 flex items-center gap-4 px-6 rounded-full ${active === item.id
+                                        className={`w-full h-14 flex items-center gap-4 px-6 rounded-full 
+                                        ${active === item.id
                                             ? "bg-[#0563BB] text-white shadow-md"
                                             : "bg-gray-100 text-gray-700"
-                                            }`}
+                                        }`}
                                     >
                                         <item.icon size={20} />
                                         <span className="font-medium">{item.label}</span>

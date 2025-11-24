@@ -52,7 +52,7 @@ function About() {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="mx-auto max-w-7xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
                         >
-                            Hello! I'm <span className="font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">Omkar Patil</span>, a passionate Frontend Developer from
+                            Hello! I'm <span className="font-semibold text-transparent bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text">Omkar Patil</span>, a passionate Frontend Developer from
                             Belgaum, Karnataka. I specialize in creating beautiful, responsive, and high-performing
                             web applications using <span className="font-medium text-[#0563bb]">React.js, Tailwind CSS, and modern JavaScript.</span> I also work with backend technologies including <span className="font-medium text-[#0563bb]">Node.js, Express.js, and SQL databases.</span>
                    
@@ -83,7 +83,7 @@ function About() {
                                 {/* WHITE FADE GRADIENT */}
                                 <div
                                     className="absolute bottom-0 left-0 w-full h-24
-                                               bg-gradient-to-t from-white/95 via-white/70 to-transparent"
+                                               bg-linear-to-t from-white/95 via-white/70 to-transparent"
                                 ></div>
                             </motion.div>
                         </motion.div>
