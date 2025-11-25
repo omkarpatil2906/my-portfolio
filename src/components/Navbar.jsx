@@ -72,7 +72,7 @@ function Navbar() {
                         animate={{ x: 0 }}
                         exit={isMobile ? { x: "-100%" } : {}}
                         transition={{ type: "spring", stiffness: 130, damping: 22 }}
-                        className="fixed top-0 left-0 h-screen bg-transparent z-50 
+                        className="fixed top-0 left-0 h-screen bg-white lg:bg-transparent z-50 
                         w-64 lg:w-24 flex flex-col justify-center gap-4 p-4"
                     >
                         {navItems.map((item) => (
