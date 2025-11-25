@@ -1,9 +1,11 @@
 import React from "react";
+import { motion } from 'framer-motion'
 import { Plus, Link } from "lucide-react";
 import FusionPhotoFilms from '../assets/img/FusionPhotoFilms.jpg'
 import ResortManagment from '../assets/img/Resort.avif'
 import OpHealth from '../assets/img/HealthCare.avif'
 import SellerList from '../assets/img/SellerList.jpg'
+import lifoFy from '../assets/img/lifoFy.png'
 
 // Your portfolio items
 const portfolioItems = [
@@ -30,7 +32,7 @@ const portfolioItems = [
     {
         id: 3,
         title: "LifoFy Tech Portfolio",
-        img: "/assets/img/portfolio/portfolio-3.jpg",
+        img: lifoFy,
     }
 
 ];
@@ -42,9 +44,25 @@ const Portfolio = () => {
 
                 {/* Title */}
                 <div className="text-center mb-10">
-                    <h2 className="text-3xl font-bold uppercase text-gray-700 mb-3">
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+                    >
                         Portfolio
-                    </h2>
+
+                        <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
+
+                        <motion.span
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "40px" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#0563bb]"
+                        />
+                    </motion.h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Explore the latest projects I’ve built — websites, systems and design work.
                     </p>

@@ -9,8 +9,9 @@ const skills = [
   { name: "React.js", level: 90 },
   { name: "React Hook Form", level: 80 },
   { name: "Material UI (MUI)", level: 85 },
-  { name: "Node.js", level: 70 },
-  { name: "SQL", level: 75 },
+  { name: "Node.js", level: 55 },
+  { name: "Express.js", level: 60 },  
+  { name: "SQL", level: 50 },
 ];
 
 const Skill = () => {
