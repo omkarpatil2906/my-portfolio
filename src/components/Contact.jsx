@@ -129,7 +129,7 @@ function Contact() {
                                 type="email"
                                 name="email"
                                 placeholder="Your Email"
-                                className="border border-gray-300 border-gray-300 p-3 rounded-lg w-full"
+                                className="border border-gray-300  p-3 rounded-lg w-full"
                                 required
                             />
                         </div>
