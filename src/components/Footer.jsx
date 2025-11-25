@@ -1,11 +1,63 @@
-import React from 'react'
+import React from "react";
+import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div>
-      
-    </div>
-  )
+    <footer className="bg-[#f7f8f9] text-[#45505b] text-center py-10 px-4">
+      <div className="container mx-auto">
+
+        {/* NAME */}
+        <h3 className="text-3xl sm:text-4xl font-bold mb-3">
+          Omkar Patil
+        </h3>
+
+        {/* SUBTEXT */}
+        <p className="text-[15px] italic max-w-2xl mx-auto mb-10">
+          Creating modern, responsive, and visually appealing web experiences
+          with passion and precision.
+        </p>
+
+        {/* SOCIAL LINKS */}
+        <div className="flex items-center justify-center gap-3 mb-10">
+         
+
+          <a
+            href="#"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
+          >
+            <FaFacebookF size={18} />
+          </a>
+
+          <a
+            href="#"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
+          >
+            <FaInstagram size={18} />
+          </a>
+
+         
+
+          <a
+            href="#"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
+          >
+            <FaLinkedinIn size={18} />
+          </a>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="mb-2">
+          © Copyright <strong>Omkar</strong>. All Rights Reserved
+        </div>
+
+        {/* CREDITS */}
+        <div className="text-[13px]">
+          Designed by <a href="#" className="text-[#0563BB] font-semibold">Omkar Patil</a>
+        </div>
+
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
