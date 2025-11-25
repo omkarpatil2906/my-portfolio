@@ -17,10 +17,12 @@ function Navbar() {
     const [hovered, setHovered] = useState(null);
     const [active, setActive] = useState("hero");
 
+    // DISABLE SCROLL WHEN MOBILE NAV OPEN
     useEffect(() => {
         document.body.style.overflow = open && isMobile ? "hidden" : "auto";
     }, [open, isMobile]);
 
+    // DETECT SCREEN RESIZE
     useEffect(() => {
         const onResize = () => {
             const mobile = window.innerWidth < 1024;
@@ -36,9 +38,35 @@ function Navbar() {
         { id: "about", icon: User, label: "About" },
         { id: "resume", icon: FileText, label: "Resume" },
         { id: "portfolio", icon: Briefcase, label: "Portfolio" },
-        { id: "services", icon: Server, label: "Services" },
         { id: "contact", icon: Mail, label: "Contact" },
     ];
+
+    // ⭐ SCROLL-SPY LOGIC — Detect active section on scroll
+    useEffect(() => {
+        const sections = navItems.map(item =>
+            document.getElementById(item.id)
+        );
+
+        const onScroll = () => {
+            let current = active;
+
+            sections.forEach(section => {
+                if (!section) return;
+
+                const rect = section.getBoundingClientRect();
+                const top = rect.top;
+
+                if (top <= 150 && top > -rect.height + 150) {
+                    current = section.id;
+                }
+            });
+
+            if (current !== active) setActive(current);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     const scrollToSection = (id) => {
         setActive(id);
@@ -49,7 +77,7 @@ function Navbar() {
 
     return (
         <>
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE MENU */}
             <button
                 onClick={() => setOpen(!open)}
                 className="lg:hidden fixed top-4 right-4 z-50 bg-[#0563BB] text-white p-3 rounded-full shadow-lg"
@@ -87,15 +115,15 @@ function Navbar() {
                                 {!isMobile && (
                                     <div className="relative flex items-center">
 
-                                        {/* BLUE LABEL */}
+                                        {/* TEXT LABEL */}
                                         <AnimatePresence>
                                             {hovered === item.id && (
                                                 <motion.div
                                                     initial={{ scaleX: 0, opacity: 0 }}
                                                     animate={{ scaleX: 1, opacity: 1 }}
                                                     exit={{ scaleX: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.25, ease: "easeOut" }}
-                                                    className="absolute left-0 origin-left h-14 bg-[#0563BB] rounded-full 
+                                                    transition={{ duration: 0.25 }}
+                                                    className="absolute left-0 origin-left h-14 bg-[#0563BB] rounded-full
                                                     flex items-center overflow-hidden shadow-lg"
                                                     style={{
                                                         zIndex: 5,
@@ -110,23 +138,24 @@ function Navbar() {
                                             )}
                                         </AnimatePresence>
 
-                                        {/* ICON (56 PX FIXED) */}
+                                        {/* ICON + ACTIVE + HOVER COLOR */}
                                         <motion.div
                                             whileHover={{
                                                 rotate: 360,
                                                 transition: { duration: 0.5 },
                                             }}
                                             className={`flex items-center justify-center z-10 transition-all duration-200 rounded-full
-                                                ${hovered === item.id
-                                                    ? "bg-[#0563BB] text-white"
-                                                    : "bg-gray-200 text-gray-700"
+                                                ${
+                                                    active === item.id || hovered === item.id
+                                                        ? "bg-[#0563BB] text-white"
+                                                        : "bg-gray-200 text-gray-700"
                                                 }`}
                                             style={{
-                                                width: hovered === item.id ? 56 : 56,
-                                                height: hovered === item.id ? 56 : 56,
+                                                width: 56,
+                                                height: 56,
                                                 borderRadius: "50%",
                                                 boxShadow:
-                                                    hovered === item.id
+                                                    active === item.id || hovered === item.id
                                                         ? "0 6px 16px rgba(5,99,187,0.25)"
                                                         : "none",
                                             }}
@@ -140,10 +169,11 @@ function Navbar() {
                                 {isMobile && (
                                     <div
                                         className={`w-full h-14 flex items-center gap-4 px-6 rounded-full 
-                                        ${active === item.id
-                                            ? "bg-[#0563BB] text-white shadow-md"
-                                            : "bg-gray-100 text-gray-700"
-                                        }`}
+                                            ${
+                                                active === item.id
+                                                    ? "bg-[#0563BB] text-white shadow-md"
+                                                    : "bg-gray-100 text-gray-700"
+                                            }`}
                                     >
                                         <item.icon size={20} />
                                         <span className="font-medium">{item.label}</span>
