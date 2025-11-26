@@ -1,17 +1,17 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skill from './components/Skill'
-import Resume from './components/Resume'
-import Portfolio from './components/Portfolio'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { Suspense, lazy } from "react";
+
+const Navbar = lazy(() => import("./components/Navbar"));
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Skill = lazy(() => import("./components/Skill"));
+const Resume = lazy(() => import("./components/Resume"));
+const Portfolio = lazy(() => import("./components/Portfolio"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
-
   return (
-    <div className=''>
+    <Suspense fallback={<div>Loading...</div>}>
       <Navbar />
       <Hero />
       <About />
@@ -20,8 +20,6 @@ function App() {
       <Portfolio />
       <Contact />
       <Footer />
-    </div>
-  )
+    </Suspense>
+  );
 }
-
-export default App
