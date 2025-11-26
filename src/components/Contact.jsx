@@ -51,7 +51,7 @@ function Contact() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+                        className="relative inline-block font-montserrat text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
                     >
                         Contact
                         <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
@@ -66,7 +66,7 @@ function Contact() {
                     </motion.h2>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-10">
+                <div className="flex flex-col font-raleway lg:flex-row gap-10">
                     {/* Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: isMobile ? 0 : -100 }}
@@ -115,7 +115,8 @@ function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="bg-white p-6  w-full lg:w-[65%] space-y-4"
+                        className="bg-white p-6 font-belleza  w-full lg:w-[65%] space-y-4"
+                        autoComplete="off"
                     >
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input

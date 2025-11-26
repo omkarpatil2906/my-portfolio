@@ -29,7 +29,7 @@ function About() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+                            className="relative font-montserrat inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
                         >
                             About
 
@@ -50,11 +50,11 @@ function About() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="mx-auto max-w-7xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
+                            className="mx-auto font-raleway max-w-7xl text-justify text-sm sm:text-base text-gray-600 leading-relaxed"
                         >
-                            Hello! I'm <span className="font-semibold text-transparent bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text">Omkar Patil</span>, a passionate Frontend Developer from
+                            Hello! I'm <span className=" text-transparent bg-linear-to-r font-poppins font-bold from-blue-600 to-purple-600 bg-clip-text">Omkar Patil</span>, a passionate Frontend Developer from
                             Belgaum, Karnataka. I specialize in creating beautiful, responsive, and high-performing
-                            web applications using <span className="font-medium text-[#0563bb]">React.js, Tailwind CSS, and modern JavaScript.</span> I also work with backend technologies including <span className="font-medium text-[#0563bb]">Node.js, Express.js, and SQL databases.</span>
+                            web applications using <span className="font-medium font-poppins text-[#0563bb]">React.js, Tailwind CSS, and modern JavaScript.</span> I also work with backend technologies including <span className="font-medium font-poppins text-[#0563bb]">Node.js, Express.js, and SQL databases.</span>
                    
                         </motion.p>
                     </div>
@@ -97,17 +97,17 @@ function About() {
                             className="space-y-4 sm:space-y-6 w-full lg:w-[60%] text-gray-700"
                         >
 
-                            <h3 className="text-xl sm:text-2xl font-bold text-[#45505b]">
+                            <h3 className="text-xl font-montserrat sm:text-2xl font-bold text-[#45505b]">
                                 Frontend Developer
                             </h3>
 
-                            <p className="italic text-gray-600 text-sm sm:text-base">
+                            <p className="italic font-raleway text-gray-600 text-sm sm:text-base">
                                 I build clean, modern, and responsive user interfaces with smooth animations and
                                 pixel-perfect precision.
                             </p>
 
                             {/* INFO GRID */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                            <div className="grid grid-cols-1 font-raleway sm:grid-cols-2 gap-3 sm:gap-4">
                                 {[
                                     { label: 'Name', value: 'Omkar Patil' },
                                     { label: 'City', value: 'Belgaum, Karnataka' },
@@ -129,7 +129,7 @@ function About() {
                                 ))}
                             </div>
 
-                            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            <p className="text-gray-600 font-raleway leading-relaxed text-sm sm:text-base">
                                 I enjoy taking on challenges that push my creativity and technical limits. I love
                                 turning ideas into beautiful, functional websites.
                             </p>

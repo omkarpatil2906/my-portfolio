@@ -7,18 +7,18 @@ function Footer() {
       <div className="container mx-auto">
 
         {/* NAME */}
-        <h3 className="text-3xl sm:text-4xl font-bold mb-3">
+        <h3 className="text-3xl font-montserrat uppercase sm:text-4xl font-bold mb-3">
           Omkar Patil
         </h3>
 
         {/* SUBTEXT */}
-        <p className="text-[15px] italic max-w-2xl mx-auto mb-10">
+        <p className="text-[15px] font-raleway italic max-w-2xl mx-auto mb-10">
           Creating modern, responsive, and visually appealing web experiences
           with passion and precision.
         </p>
 
         {/* SOCIAL LINKS */}
-        <div className="flex items-center justify-center gap-3 mb-10">
+        <div className="flex items-center  justify-center gap-3 mb-10">
          
 
           <a
@@ -46,12 +46,12 @@ function Footer() {
         </div>
 
         {/* COPYRIGHT */}
-        <div className="mb-2">
+        <div className="mb-2 font-raleway text-sm">
           © Copyright <strong>Omkar</strong>. All Rights Reserved
         </div>
 
         {/* CREDITS */}
-        <div className="text-[13px]">
+        <div className="text-[13px] font-raleway">
           Designed by <a href="#" className="text-[#0563BB] font-semibold">Omkar Patil</a>
         </div>
 

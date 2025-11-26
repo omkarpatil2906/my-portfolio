@@ -33,7 +33,7 @@ const Skill = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+          className="relative inline-block text-3xl font-montserrat sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
         >
           Skills
           <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
@@ -46,14 +46,14 @@ const Skill = () => {
           />
         </motion.h2>
 
-        <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-600 font-raleway max-w-3xl mx-auto text-sm sm:text-base">
           As a Frontend Developer passionate about crafting seamless, responsive, and
           modern user interfaces, I’ve honed my expertise across a range of technologies.
         </p>
       </motion.div>
 
       {/* SKILLS GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 font-raleway gap-6 sm:gap-8 max-w-5xl mx-auto">
         {skills.map((skill, index) => (
           <motion.div
             key={index}

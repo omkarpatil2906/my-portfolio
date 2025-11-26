@@ -20,7 +20,7 @@ const Resume = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+          className="relative inline-block font-montserrat text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
         >
           Resume
           <span className="absolute bottom-px left-1/2 -translate-x-1/2 block w-[120px] h-px bg-[#ddd]" />
@@ -33,7 +33,7 @@ const Resume = () => {
           />
         </motion.h2>
 
-        <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-600 max-w-3xl font-raleway mx-auto text-sm sm:text-base">
           Frontend Developer passionate about building modern, responsive web applications…
         </p>
       </div>
@@ -52,21 +52,21 @@ const Resume = () => {
           transition={{ duration: 0.8 }}
         >
           {/* SUMMARY */}
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#45505b] mb-4">Summary</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#45505b] font-montserrat mb-4">Summary</h3>
 
           <div className="border-l-2 border-[#0563bb] pl-6 relative 
               before:content-[''] before:absolute before:w-4 before:h-4 before:rounded-full 
               before:bg-white before:border-2 before:border-[#0563bb] before:-left-2 before:top-0 mb-10">
             
-            <h4 className="text-[#0563bb] font-semibold text-base sm:text-lg uppercase">
+            <h4 className="text-[#0563bb] font-belleza tracking-wider font-semibold text-base sm:text-lg uppercase">
               Omkar Patil
             </h4>
 
-            <p className="italic text-gray-700 mb-2 text-sm sm:text-base">
+            <p className="italic text-gray-700 font-raleway mb-2 text-sm sm:text-base">
               Frontend Developer with 1+ years of experience…
             </p>
 
-            <ul className="text-gray-700 text-xs sm:text-sm space-y-1">
+            <ul className="text-gray-700 text-xs font-raleway sm:text-sm space-y-1">
               <li>Belgaum, Karnataka, India</li>
               <li>+91 7975789854</li>
               <li>ompatil2906@gmail.com</li>
@@ -74,7 +74,7 @@ const Resume = () => {
           </div>
 
           {/* EDUCATION */}
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#45505b] mb-4">Education</h3>
+          <h3 className="text-xl sm:text-2xl font-montserrat font-semibold text-[#45505b] mb-4">Education</h3>
 
           <div className="border-l-2 border-[#0563bb] pl-6 space-y-8 relative">
             {[
@@ -102,13 +102,13 @@ const Resume = () => {
                   before:w-4 before:h-4 before:rounded-full before:bg-white before:border-2 
                   before:border-[#0563bb] before:-left-[33px] before:top-0"
               >
-                <h4 className="text-[#0563bb] font-semibold text-base sm:text-lg uppercase">
+                <h4 className="text-[#0563bb] font-belleza tracking-wider font-semibold text-base sm:text-lg uppercase">
                   {edu.title}
                 </h4>
-                <h5 className="bg-[#f7f8f9] inline-block px-3 py-1 font-semibold text-xs sm:text-sm rounded my-2">
+                <h5 className="bg-[#f7f8f9] font-raleway inline-block px-3 py-1 font-semibold text-xs sm:text-sm rounded my-2">
                   {edu.date}
                 </h5>
-                <p className="italic text-gray-700 text-sm sm:text-base">{edu.desc}</p>
+                <p className="italic text-gray-700 font-raleway text-sm sm:text-base">{edu.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -124,7 +124,7 @@ const Resume = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#45505b] mb-4">Professional Experience</h3>
+          <h3 className="text-xl sm:text-2xl font-montserrat font-semibold text-[#45505b] mb-4">Professional Experience</h3>
 
           <div className="border-l-2 border-[#0563bb] pl-6 space-y-10 relative">
             {[
@@ -157,18 +157,18 @@ const Resume = () => {
                   before:w-4 before:h-4 before:rounded-full before:bg-white before:border-2 
                   before:border-[#0563bb] before:-left-[33px] before:top-0"
               >
-                <h4 className="text-[#0563bb] font-semibold text-base sm:text-lg uppercase">
+                <h4 className="text-[#0563bb] font-belleza tracking-wider font-semibold text-base sm:text-lg uppercase">
                   {exp.title}
                 </h4>
 
-                <h5 className="bg-[#f7f8f9] inline-block px-3 py-1 font-semibold text-xs sm:text-sm rounded my-2">
+                <h5 className="bg-[#f7f8f9] inline-block px-3 py-1 font-raleway font-semibold text-xs sm:text-sm rounded my-2">
                   {exp.date}
                 </h5>
 
-                <p className="italic text-gray-700 text-sm sm:text-base">{exp.desc}</p>
+                <p className="italic text-gray-700 text-sm font-raleway sm:text-base">{exp.desc}</p>
 
                 {exp.list && (
-                  <ul className="list-disc ml-6 text-gray-700 space-y-1 text-xs sm:text-sm mt-2">
+                  <ul className="list-disc ml-6 text-gray-700 font-raleway space-y-1 text-xs sm:text-sm mt-2">
                     {exp.list.map((li, j) => <li key={j}>{li}</li>)}
                   </ul>
                 )}

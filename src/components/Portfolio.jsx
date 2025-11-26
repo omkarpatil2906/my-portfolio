@@ -49,7 +49,7 @@ const Portfolio = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative inline-block text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
+                        className="relative inline-block font-montserrat text-3xl sm:text-[32px] font-bold uppercase mb-5 pb-5 text-[#45505b]"
                     >
                         Portfolio
 
@@ -63,7 +63,7 @@ const Portfolio = () => {
                             className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#0563bb]"
                         />
                     </motion.h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-600 font-raleway max-w-2xl mx-auto">
                         Explore the latest projects I’ve built — websites, systems and design work.
                     </p>
                 </div>
@@ -87,7 +87,7 @@ const Portfolio = () => {
 
                             {/* Information */}
                             <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                <h4 className="text-xl font-semibold text-gray-700">
+                                <h4 className="text-xl font-belleza tracking-wider font-semibold text-gray-700">
                                     {item.title}
                                 </h4>
 

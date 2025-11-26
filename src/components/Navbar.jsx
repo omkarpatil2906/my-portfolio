@@ -41,32 +41,30 @@ function Navbar() {
         { id: "contact", icon: Mail, label: "Contact" },
     ];
 
-    // ⭐ SCROLL-SPY LOGIC — Detect active section on scroll
     useEffect(() => {
-        const sections = navItems.map(item =>
-            document.getElementById(item.id)
-        );
+    const onScroll = () => {
+        const scrollPosition = window.scrollY;
 
-        const onScroll = () => {
-            let current = active;
+        let currentSection = "hero"; // default = HOME section
 
-            sections.forEach(section => {
-                if (!section) return;
+        navItems.forEach(item => {
+            const el = document.getElementById(item.id);
+            if (!el) return;
 
-                const rect = section.getBoundingClientRect();
-                const top = rect.top;
+            const offsetTop = el.offsetTop - 200; // adjust sensitivity
 
-                if (top <= 150 && top > -rect.height + 150) {
-                    current = section.id;
-                }
-            });
+            if (scrollPosition >= offsetTop) {
+                currentSection = item.id;
+            }
+        });
 
-            if (current !== active) setActive(current);
-        };
+        setActive(currentSection);
+    };
 
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+}, []);
+
 
     const scrollToSection = (id) => {
         setActive(id);
@@ -131,7 +129,7 @@ function Navbar() {
                                                         paddingRight: 18,
                                                     }}
                                                 >
-                                                    <span className="text-white font-medium whitespace-nowrap">
+                                                    <span className="text-white font-raleway font-medium whitespace-nowrap">
                                                         {item.label}
                                                     </span>
                                                 </motion.div>
@@ -176,7 +174,7 @@ function Navbar() {
                                             }`}
                                     >
                                         <item.icon size={20} />
-                                        <span className="font-medium">{item.label}</span>
+                                        <span className="font-medium font-belleza">{item.label}</span>
                                     </div>
                                 )}
                             </div>
