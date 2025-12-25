@@ -33,7 +33,7 @@ const Resume = () => {
           />
         </motion.h2>
 
-        <p className="text-gray-600 max-w-3xl font-raleway mx-auto text-sm sm:text-base">
+        <p className="text-gray-600 max-w-3xl font-raleway mx-auto text-base sm:text-lg">
           Frontend Developer passionate about building modern, responsive web applications…
         </p>
       </div>
@@ -62,7 +62,7 @@ const Resume = () => {
               Omkar Patil
             </h4>
 
-            <p className="italic text-gray-700 font-raleway mb-2 text-sm sm:text-base">
+            <p className="italic text-gray-700 font-raleway mb-2 text-base sm:text-lg">
               Frontend Developer with 1+ years of experience…
             </p>
 
@@ -108,7 +108,7 @@ const Resume = () => {
                 <h5 className="bg-[#f7f8f9] font-raleway inline-block px-3 py-1 font-semibold text-xs sm:text-sm rounded my-2">
                   {edu.date}
                 </h5>
-                <p className="italic text-gray-700 font-raleway text-sm sm:text-base">{edu.desc}</p>
+                <p className="italic text-gray-700 font-raleway text-base sm:text-lg">{edu.desc}</p>
               </motion.div>
             ))}
           </div>

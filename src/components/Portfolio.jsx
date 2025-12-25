@@ -63,7 +63,7 @@ const Portfolio = () => {
                             className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-[#0563bb]"
                         />
                     </motion.h2>
-                    <p className="text-gray-600 font-raleway max-w-2xl mx-auto">
+                    <p className="text-gray-600 font-raleway max-w-2xl text-base sm:text-lg text-justify  mx-auto">
                         Explore the latest projects I’ve built — websites, systems and design work.
                     </p>
                 </div>

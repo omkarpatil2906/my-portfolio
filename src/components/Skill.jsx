@@ -46,7 +46,7 @@ const Skill = () => {
           />
         </motion.h2>
 
-        <p className="text-gray-600 font-raleway max-w-3xl mx-auto text-sm sm:text-base">
+        <p className="text-gray-600 font-raleway text-justify sm:text-center max-w-3xl mx-auto text-base sm:text-lg">
           As a Frontend Developer passionate about crafting seamless, responsive, and
           modern user interfaces, I’ve honed my expertise across a range of technologies.
         </p>
@@ -70,7 +70,7 @@ const Skill = () => {
 
             {/* LABEL + PERCENT */}
             <div className="flex justify-between mb-2 sm:mb-3">
-              <span className="text-sm sm:text-base font-medium text-gray-800">
+              <span className="text-base sm:text-lg font-medium text-gray-800">
                 {skill.name}
               </span>
               <motion.span
@@ -78,7 +78,7 @@ const Skill = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="text-sm sm:text-base font-medium text-[#0563bb]"
+                className="text-base sm:text-lg font-medium text-[#0563bb]"
               >
                 {skill.level}%
               </motion.span>
