@@ -10,29 +10,13 @@ const skills = [
   { name: "React Hook Form", level: 80 },
   { name: "Material UI (MUI)", level: 85 },
   { name: "Node.js", level: 55 },
-  { name: "Express.js", level: 60 },
+  { name: "Express.js", level: 60 },  
   { name: "SQL", level: 50 },
 ];
 
 const Skill = () => {
   const isMobile = window.innerWidth < 768; // ⭐ Mobile detection
 
-  const roles = [
-    "Frontend Developer",
-    "Full Stack Web Developer",
-    "MERN Stack Developer",
-    "Freelancer",
-  ];
-
-  const typingSpeed = 90;
-  const deletingSpeed = 50;
-  const delayBetween = 1200;
-
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  
   return (
     <section id="skills" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-20">
 
