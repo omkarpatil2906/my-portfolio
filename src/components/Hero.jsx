@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
@@ -6,6 +6,46 @@ import hero from '../assets/img/PhotoRoom.png'
 import heroMobile from '../assets/img/PhotoRoomMobile.png'
 
 function Hero() {
+    const [text, setText] = useState("");
+    const [index, setIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const roles = [
+        "React.js Developer",
+        "Frontend Developer",
+        "Full-Stack Web Developer",
+        "MERN Stack Developer",
+    ];
+
+
+    const typingSpeed = 90;
+    const deletingSpeed = 50;
+    const delayBetween = 1200;
+
+    useEffect(() => {
+        const current = roles[index];
+        let timer;
+
+        if (!isDeleting) {
+            timer = setTimeout(() => {
+                setText(current.substring(0, text.length + 1));
+                if (text === current) {
+                    setTimeout(() => setIsDeleting(true), delayBetween);
+                }
+            }, typingSpeed);
+        } else {
+            timer = setTimeout(() => {
+                setText(current.substring(0, text.length - 1));
+                if (text === "") {
+                    setIsDeleting(false);
+                    setIndex((prev) => (prev + 1) % roles.length);
+                }
+            }, deletingSpeed);
+        }
+
+        return () => clearTimeout(timer);
+    }, [text, isDeleting, index]);
+
+
     return (
 
         <section
@@ -95,24 +135,16 @@ function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    className="text-base sm:text-lg md:text-2xl text-[#45505b] mb-5 flex justify-center md:justify-start"
+                    className="text-base sm:text-lg md:text-2xl font-raleway text-[#45505b] mb-5 flex items-center justify-center md:justify-start"
                 >
                     I'm a&nbsp;
                     <motion.span
-                        initial={{ width: 0 }}
-                        animate={{
-                            width: "auto",
-                            color: ['#0563bb', '#0452a0', '#0563bb']
-                        }}
-                        transition={{
-                            duration: 1.8,
-                            ease: "easeInOut"
-                        }}
-                        className="font-semibold font-raleway overflow-hidden whitespace-nowrap border-r-2 border-blue-600 pr-1 animate-cursor"
+                        className="font-semibold  text-[#0563bb] whitespace-nowrap border-r-2 border-blue-600 pr-1 animate-cursor"
                     >
-                        Frontend Developer
+                        {text}
                     </motion.span>
                 </motion.p>
+
 
                 {/* SOCIAL ICONS */}
                 <motion.div
