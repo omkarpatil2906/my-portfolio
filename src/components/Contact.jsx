@@ -45,7 +45,7 @@ function Contact() {
                 className="max-w-6xl mx-auto"
             >
                 {/* Title */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-5 md:mb-12">
                     <motion.h2
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -73,10 +73,10 @@ function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="bg-white p-6  w-full lg:w-[35%]"
+                        className="bg-white md:p-6  w-full lg:w-[35%]"
                     >
                         <div className="space-y-10">
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start  gap-4">
                                 <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-[#0563bb]">
                                     <MapPin size={22} />
                                 </div>
@@ -115,7 +115,7 @@ function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.3 }}
-                        className="bg-white p-6 font-belleza  w-full lg:w-[65%] space-y-4"
+                        className="bg-white md:p-6 font-belleza  w-full lg:w-[65%] space-y-4"
                         autoComplete="off"
                     >
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

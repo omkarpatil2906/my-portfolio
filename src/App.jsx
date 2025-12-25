@@ -23,3 +23,5 @@ function App() {
     </Suspense>
   );
 }
+
+export default App;
