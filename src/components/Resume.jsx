@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Resume = () => {
-  const isMobile = window.innerWidth < 768; // ⭐ detect mobile
+  const isMobile = window.innerWidth < 1024; // ⭐ detect mobile
 
   return (
     <motion.section

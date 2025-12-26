@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import emailjs from "emailjs-com";
 
 function Contact() {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 1024;
 
     const [loading, setLoading] = useState(false);
     const [sent, setSent] = useState(false);
@@ -17,10 +17,10 @@ function Contact() {
 
         emailjs
             .sendForm(
-                "service_yk237vm",      // 👈 replace with your EmailJS service ID
-                "template_4oivkms",     // 👈 replace with your template ID
+                "service_yk237vm",      
+                "template_4oivkms",   
                 e.target,
-                "ZibcPyDaqhwHQkCIJ"      // 👈 replace with your EmailJS public key
+                "ZibcPyDaqhwHQkCIJ"     
             )
             .then(
                 () => {

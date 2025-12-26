@@ -35,8 +35,6 @@ function Footer() {
             <FaInstagram size={18} />
           </a>
 
-         
-
           <a
             href="#"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"

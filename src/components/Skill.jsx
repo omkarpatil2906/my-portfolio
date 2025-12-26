@@ -15,7 +15,7 @@ const skills = [
 ];
 
 const Skill = () => {
-  const isMobile = window.innerWidth < 768; // ⭐ Mobile detection
+  const isMobile = window.innerWidth < 1024; // ⭐ Mobile detection
 
   return (
     <section id="skills" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-20">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn, FaGithub  } from "react-icons/fa";
 
 import hero from '../assets/img/PhotoRoom.png'
 import heroMobile from '../assets/img/PhotoRoomMobile.png'
@@ -15,6 +15,29 @@ function Hero() {
         "Full-Stack Web Developer",
         "MERN Stack Developer",
     ];
+
+    const socialInfo = [
+        {
+            icon: FaTwitter,
+            link: ""
+        },
+        {
+            icon: FaInstagram,
+            link: ""
+        },
+        {
+            icon: FaFacebookF,
+            link: ""
+        },
+        {
+            icon: FaLinkedinIn,
+            link: ""
+        }, {
+            icon: FaGithub ,
+            link: ""
+
+        }
+    ]
 
 
     const typingSpeed = 90;
@@ -62,14 +85,14 @@ function Hero() {
                     duration: 1.4,
                     ease: [0.25, 0.1, 0.25, 1],  // smooth cubic animation
                 }}
-                className=" hidden md:block  absolute inset-0  w-full h-full  object-right object-contain z-0 "
+                className=" hidden lg:block  absolute inset-0  w-full h-full  object-right object-contain z-0 "
             />
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent z-20"></div>
 
 
 
             {/* MOBILE IMAGE USING IMG TAG */}
-            <div className="md:hidden w-full flex justify-center relative overflow-hidden mt-4">
+            <div className="lg:hidden w-full flex justify-center relative overflow-hidden mt-4">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -79,7 +102,7 @@ function Hero() {
                     <img
                         src={heroMobile}
                         alt="Omkar Patil"
-                        className="w-full object-contain relative z-10 -mb-6"
+                        className="w-full object-contain relative md:h-[600px] z-10 -mb-6"
                     />
 
                     {/* Fade bottom */}
@@ -115,7 +138,7 @@ function Hero() {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="
                         relative z-20 
-                        text-center md:text-left 
+                        text-center lg:text-left 
                         px-4 md:px-12 lg:px-36 
                         mt-2 md:mt-0
                     "
@@ -125,7 +148,7 @@ function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.9, delay: 0.2 }}
-                    className="text-3xl font-montserrat sm:text-4xl md:text-7xl font-bold text-[#45505b] mb-1"
+                    className="text-3xl font-montserrat mt-6 sm:text-4xl lg:text-7xl font-bold text-[#45505b] mb-1"
                 >
                     Omkar Patil
                 </motion.h1>
@@ -135,7 +158,7 @@ function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    className="text-base sm:text-lg md:text-2xl font-raleway text-[#45505b] mb-5 flex items-center justify-center md:justify-start"
+                    className="text-base sm:text-lg lg:text-2xl font-raleway text-[#45505b] mb-5 flex items-center justify-center lg:justify-start"
                 >
                     I'm a&nbsp;
                     <motion.span
@@ -151,21 +174,24 @@ function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.6 }}
-                    className="flex justify-center md:justify-start gap-6"
+                    className="flex justify-center lg:justify-start gap-4"
                 >
-                    {[FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+                    {socialInfo.map((item, i) => (
                         <motion.a
                             key={i}
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
                             whileHover={{ scale: 1.25 }}
-                            href="#"
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-[#45505b] hover:text-[#0563bb]"
                         >
-                            <Icon size={22} />
+                            <item.icon size={22} />
                         </motion.a>
                     ))}
+
                 </motion.div>
             </motion.div>
 

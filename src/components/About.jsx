@@ -5,7 +5,7 @@ import aboutImg from '../assets/img/OmkarP.png'
 
 function About() {
 
-    const isMobile = window.innerWidth < 768; // Detect mobile screen
+    const isMobile = window.innerWidth < 1024; // Detect mobile screen
 
     return (
         <div>
@@ -44,7 +44,6 @@ function About() {
                             />
                         </motion.h2>
 
-                        {/* INTRO PARAGRAPH */}
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
@@ -80,7 +79,6 @@ function About() {
                                     alt="Omkar Patil"
                                 />
 
-                                {/* WHITE FADE GRADIENT */}
                                 <div
                                     className="absolute bottom-0 left-0 w-full h-24
                                                bg-linear-to-t from-white/95 via-white/70 to-transparent"
