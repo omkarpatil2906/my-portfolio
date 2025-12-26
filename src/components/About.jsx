@@ -98,7 +98,7 @@ function About() {
                         >
 
                             <h3 className="text-xl  font-montserrat sm:text-2xl font-bold text-[#45505b]">
-                                Frontend Developer
+                                Full-Stack Developer
                             </h3>
 
                             <p className="italic font-raleway pt-1 text-gray-600 text-base sm:text-lg">
