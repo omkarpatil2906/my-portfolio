@@ -75,7 +75,7 @@ function About() {
                             >
                                 <img
                                     src={aboutImg}
-                                    className="h-64 sm:h-80 lg:h-96 w-full object-cover"
+                                    className="h-64 sm:h-[600px] lg:h-96 w-full object-cover"
                                     alt="Omkar Patil"
                                 />
 

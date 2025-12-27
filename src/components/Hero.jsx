@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn, FaGithub  } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 import hero from '../assets/img/PhotoRoom.png'
 import heroMobile from '../assets/img/PhotoRoomMobile.png'
@@ -17,24 +17,21 @@ function Hero() {
     ];
 
     const socialInfo = [
-        {
-            icon: FaTwitter,
-            link: ""
-        },
+
         {
             icon: FaInstagram,
-            link: ""
+            link: "https://www.instagram.com/_omya_patil_18?igsh=eDVmeDg2eTY3b2Ro"
         },
         {
             icon: FaFacebookF,
-            link: ""
+            link: "https://www.facebook.com/share/1JfJAaSBJi/"
         },
         {
             icon: FaLinkedinIn,
-            link: ""
+            link: "https://www.linkedin.com/in/omkar-patil-b744752a9/"
         }, {
-            icon: FaGithub ,
-            link: ""
+            icon: FaGithub,
+            link: "https://github.com/omkarpatil2906/"
 
         }
     ]
