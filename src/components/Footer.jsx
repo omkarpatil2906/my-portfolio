@@ -22,21 +22,21 @@ function Footer() {
          
 
           <a
-            href="#"
+            href="https://www.facebook.com/share/1JfJAaSBJi/"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
           >
             <FaFacebookF size={18} />
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/_omya_patil_18?igsh=eDVmeDg2eTY3b2Ro"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
           >
             <FaInstagram size={18} />
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/omkar-patil-b744752a9/"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-[#0563BB] text-white hover:bg-[#0678E3] transition"
           >
             <FaLinkedinIn size={18} />
