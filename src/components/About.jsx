@@ -5,7 +5,7 @@ import aboutImg from '../assets/img/OmkarP.png'
 
 function About() {
 
-    const isMobile = window.innerWidth < 1024; // Detect mobile screen
+    const isMobile = window.innerWidth < 1024;
 
     return (
         <div>
@@ -58,10 +58,8 @@ function About() {
                         </motion.p>
                     </div>
 
-                    {/* ABOUT CONTENT */}
                     <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-x-6 max-w-6xl mx-auto">
 
-                        {/* LEFT IMAGE with FADE BOTTOM */}
                         <motion.div
                             initial={{ opacity: 0, x: isMobile ? 0 : -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -86,7 +84,7 @@ function About() {
                             </motion.div>
                         </motion.div>
 
-                        {/* RIGHT CONTENT */}
+                
                         <motion.div
                             initial={{ opacity: 0, x: isMobile ? 0 : 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
