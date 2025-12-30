@@ -44,7 +44,7 @@ function Contact() {
                 transition={{ duration: 1.2 }}
                 className="max-w-6xl mx-auto"
             >
-                {/* Title */}
+                
                 <div className="text-center mb-5 md:mb-12">
                     <motion.h2
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -67,7 +67,7 @@ function Contact() {
                 </div>
 
                 <div className="flex flex-col font-raleway lg:flex-row gap-10">
-                    {/* Contact Info */}
+                   
                     <motion.div
                         initial={{ opacity: 0, x: isMobile ? 0 : -100 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -108,7 +108,7 @@ function Contact() {
                         </div>
                     </motion.div>
 
-                    {/* Contact Form */}
+                    
                     <motion.form
                         onSubmit={sendEmail}
                         initial={{ opacity: 0, x: isMobile ? 0 : 100 }}
