@@ -2,13 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Resume = () => {
-  const isMobile = window.innerWidth < 1024; // ⭐ detect mobile
+  const isMobile = window.innerWidth < 1024; 
 
   return (
     <motion.section
       id="resume"
       className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 md:px-10 lg:px-20"
-      initial={{ opacity: 0, y: isMobile ? 0 : 100 }} // ⭐ no slide on mobile
+      initial={{ opacity: 0, y: isMobile ? 0 : 100 }} 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -38,20 +38,19 @@ const Resume = () => {
         </p>
       </div>
 
-      {/* 2 COLUMN GRID */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
         
-        {/* LEFT COLUMN */}
+       
         <motion.div
           initial={{
             opacity: 0,
-            x: isMobile ? 0 : -50, // ⭐ no slide on mobile
+            x: isMobile ? 0 : -50, 
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* SUMMARY */}
           <h3 className="text-xl sm:text-2xl font-semibold text-[#45505b] font-montserrat mb-4">Summary</h3>
 
           <div className="border-l-2 border-[#0563bb] pl-6 relative 
